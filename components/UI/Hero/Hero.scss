@@ -8,14 +8,15 @@
 			rgba($color-primary-dark, 0.8)
 		),
 		url('/images/hero.jpg');
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
 	background-size: cover;
-	background-position: top;
-	-webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 	position: relative;
 
+	clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
 	@include respond(phone) {
-		-webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
 	}
 
