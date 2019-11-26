@@ -1,7 +1,8 @@
-import React from 'react';
-import App from 'next/app';
+import React from "react";
+import App from "next/app";
+import ReactGA from "react-ga";
 
-import '../public/sass/_main.scss';
+import "../public/sass/_main.scss";
 
 class MyApp extends App {
 	// Only uncomment this method if you have blocking data requirements for
@@ -15,6 +16,11 @@ class MyApp extends App {
 	//
 	//   return { ...appProps }
 	// }
+
+	componentDidMount() {
+		ReactGA.initialize("UA-000000-01");
+		ReactGA.pageview(window.location.pathname + window.location.search);
+	}
 
 	render() {
 		const { Component, pageProps } = this.props;

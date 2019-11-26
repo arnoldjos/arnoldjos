@@ -1,4 +1,4 @@
-@import 'public/sass/shared';
+@import "public/sass/shared";
 
 .Hero {
 	height: 90vh;
@@ -7,7 +7,7 @@
 			rgba($color-primary-light, 0.8),
 			rgba($color-primary-dark, 0.8)
 		),
-		url('/images/hero.jpg');
+		url("/images/hero.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -24,6 +24,18 @@
 		border-radius: 50%;
 		width: 50%;
 		margin-bottom: 1rem;
+	}
+
+	&__heading {
+		@include respond(phone) {
+			font-size: 3rem;
+		}
+	}
+
+	&__sub {
+		@include respond(phone) {
+			font-size: 1.8rem;
+		}
 	}
 
 	&__text_box {

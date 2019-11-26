@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
-import css from './Hero.scss';
-import Button from '../Button/Button';
+import css from "./Hero.scss";
+import Button from "../Button/Button";
 
 const Hero = () => {
 	return (
@@ -12,12 +12,8 @@ const Hero = () => {
 					alt="Arnold Joseph Fudolig"
 					className={css.Hero__headshot}
 				/>
-				<h1 className="Hero__heading-primary">
-					<span className="Hero__heading-primary--main">
-						ARNOLD JOSEPH A. FUDOLIG
-					</span>
-				</h1>
-				<Button text="Projects" />
+				<h1 className={css.Hero__heading}>ARNOLD JOSEPH A. FUDOLIG</h1>
+				<h3 className={css.Hero__sub}>arnold.fudolig@gmail.com</h3>
 			</div>
 		</header>
 	);

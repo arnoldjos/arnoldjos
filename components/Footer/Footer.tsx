@@ -1,9 +1,9 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import React from "react";
+import Grid from "@material-ui/core/Grid";
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
-import css from './Footer.scss';
+import css from "./Footer.scss";
 
 export default function Footer() {
 	const iconStyle = {
@@ -13,14 +13,6 @@ export default function Footer() {
 
 	return (
 		<footer className={css.Footer}>
-			<div className={css.Footer__logo_box}>
-				{/* <img
-					src="images/logo-green-2x.png"
-					alt="Full logo"
-					className="footer__logo"
-				/> */}
-			</div>
-
 			<Grid container spacing={5}>
 				<Grid item xs={12} sm={6}>
 					<div className={css.Footer__navigation}>
@@ -31,8 +23,16 @@ export default function Footer() {
 								</a>
 							</li>
 							<li className={css.Footer__item}>
-								<a href="#" className={css.Footer__link}>
-									Company
+								<a href="#Skills" className={css.Footer__link}>
+									Skills
+								</a>
+							</li>
+							<li className={css.Footer__item}>
+								<a
+									href="#Projects"
+									className={css.Footer__link}
+								>
+									Projects
 								</a>
 							</li>
 						</ul>
@@ -43,13 +43,16 @@ export default function Footer() {
 						<a href="https://github.com/arnoldjos" target="_blank">
 							<GitHubIcon
 								className={css.Footer__sites_icons}
-								style={{ fontSize: '3rem' }}
+								style={{ fontSize: "3rem" }}
 							/>
 						</a>
-						<a href="https://www.linkedin.com/in/arnoldjos" target="_blank">
+						<a
+							href="https://www.linkedin.com/in/arnoldjos"
+							target="_blank"
+						>
 							<LinkedInIcon
 								className={css.Footer__sites_icons}
-								style={{ fontSize: '3rem' }}
+								style={{ fontSize: "3rem" }}
 							/>
 						</a>
 					</p>
