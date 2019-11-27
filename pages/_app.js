@@ -18,7 +18,7 @@ class MyApp extends App {
 	// }
 
 	componentDidMount() {
-		ReactGA.initialize("UA-000000-01");
+		ReactGA.initialize("UA-131755793-1");
 		ReactGA.pageview(window.location.pathname + window.location.search);
 	}
 

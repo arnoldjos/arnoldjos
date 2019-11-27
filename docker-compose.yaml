@@ -9,10 +9,13 @@ services:
       - '443:443'
     volumes:
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./letsencrypt-site:/usr/share/nginx/html
       - certbot-etc:/etc/letsencrypt
       - certbot-var:/var/lib/letsencrypt
     depends_on:
       - nextjs
+    networks:
+      - app
   nextjs:
     container_name: nextjs
     build: .
@@ -20,6 +23,8 @@ services:
       - '3000'
     environment:
       - NODE_ENV=deployment
+    networks:
+      - app
   certbot:
     container_name: certbot
     image: certbot/certbot
@@ -28,8 +33,13 @@ services:
       - certbot-var:/var/lib/letsencrypt
     depends_on:
       - proxy
-    command: certonly --email arnold.anaviso@gmail.com --agree-tos --no-eff-email --staging -d arnoldjoslive.com  -d www.arnoldjoslive.com
+    networks:
+      - app
+    command: certonly --nginx --email arnold.anaviso@gmail.com --agree-tos --no-eff-email --staging -d arnoldjoslive.com  -d www.arnoldjoslive.com
 
 volumes:
   certbot-etc:
   certbot-var:
+
+networks:
+  app:
