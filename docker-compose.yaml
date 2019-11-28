@@ -39,5 +39,9 @@ services:
       - app
     command: certonly --webroot --webroot-path=/var/www/html --email arnold.anaviso@gmail.com --agree-tos --no-eff-email --force-renewal --staging -d arnoldjoslive.com  -d www.arnoldjoslive.com
 
+volumes:
+  certbot-etc:
+  certbot-var:
+
 networks:
   app:
