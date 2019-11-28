@@ -46,7 +46,7 @@ volumes:
     driver: local
     driver_opts:
       type: none
-      device: ./.next/
+      device: ./.next
       o: bind
 
 networks:
