@@ -13,7 +13,7 @@ const Home = () => (
 			<title>Arnoldjos</title>
 			<meta
 				name="description"
-				content="This is site aims to show the skills and projects of Arnold Joseph A. Fudolig."
+				content="I am Arnold Joseph Fudolig, a Full Stack Web Developer. I made this site to showcase my skills as well as my past projects."
 			/>
 			<link rel="canonical" href="http://arnoldjoslive.com/" />
 			<link rel="canonical" href="https://arnoldjoslive.com/" />
