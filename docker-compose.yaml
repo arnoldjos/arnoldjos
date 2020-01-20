@@ -16,7 +16,9 @@ services:
     depends_on:
       - nextjs
     networks:
-      - app
+			- app
+		environment:
+			VIRTUAL_HOST: arnoldjoslive.com, www.arnoldjoslive.com
   nextjs:
     container_name: nextjs
     build: .
@@ -37,11 +39,14 @@ services:
       - proxy
     networks:
       - app
-    command: certonly --webroot --webroot-path=/var/www/html --email arnold.anaviso@gmail.com --agree-tos --no-eff-email --force-renewal -d arnoldjoslive.com  -d www.arnoldjoslive.com
+		command: certonly --webroot --webroot-path=/var/www/html --email arnold.anaviso@gmail.com --agree-tos --no-eff-email --force-renewal -d arnoldjoslive.com  -d www.arnoldjoslive.com
 
 volumes:
   certbot-etc:
   certbot-var:
 
 networks:
-  app:
+	app:
+	default:
+		external:
+			name: nginx-proxy
