@@ -4,7 +4,7 @@ services:
   reverse-proxy:
     image: traefik:v2.0
     command:
-      - "--api.insecure=false"
+      - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
@@ -16,6 +16,7 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
+      - default
       - reverse-proxy
   nextjs:
     container_name: nextjs
@@ -26,10 +27,8 @@ services:
       - NODE_ENV=deployment
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.nextjs.rule=Host(`arnoldjoslive.com`, `www.arnoldjoslive.com`)"
+      - "traefik.http.routers.nextjs.rule=Host(`arnoldjoslive.com`, `www.arnoldjoslive.com`, `nextjs.localhost`)"
       - "traefik.http.routers.nextjs.entrypoints=web"
-    networks:
-      - reverse-proxy
 
 networks:
   reverse-proxy:
