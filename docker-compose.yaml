@@ -35,6 +35,7 @@ services:
       - "traefik.enable=true"
       - "traefik.http.routers.nextjs.rule=Host(`arnoldjoslive.com`, `www.arnoldjoslive.com`, `nextjs.localhost`)"
       - "traefik.http.routers.nextjs.entrypoints=web"
+      - "traefik.http.routers.nextjs.tls.certresolver=mytlschallenge"
 
 networks:
   traefik-reverse-proxy:
